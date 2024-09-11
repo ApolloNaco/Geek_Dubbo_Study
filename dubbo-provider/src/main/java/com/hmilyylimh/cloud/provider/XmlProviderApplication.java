@@ -8,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import java.util.concurrent.CountDownLatch;
 
 
-public class ProviderApplication {
+public class XmlProviderApplication {
     public static void main(String[] args) throws InterruptedException {
 //        Main.main(new String[]{"spring","log4j"});
 //        Main.main(new String[]{});
