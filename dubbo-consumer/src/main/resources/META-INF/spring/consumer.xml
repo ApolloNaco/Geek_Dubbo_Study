@@ -7,9 +7,13 @@
     <dubbo:application name="dubbo-consumer" />
     <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 
+<!--    <dubbo:reference interface="com.hmilyylimh.cloud.api.UserQueryFacade"-->
+<!--                     id="userQueryFacade"-->
+<!--                     url="dubbo://10.117.225.53:20880"-->
+<!--    ></dubbo:reference>-->
+
     <dubbo:reference interface="com.hmilyylimh.cloud.api.UserQueryFacade"
                      id="userQueryFacade"
-                     url="dubbo://10.117.225.53:20880"
     ></dubbo:reference>
 
 
