@@ -1,4 +1,4 @@
-package com.hmilyylimh.cloud.provider;
+package com.hmilyylimh.cloud.provider.sync;
 
 
 
@@ -7,12 +7,10 @@ import com.hmilyylimh.cloud.provider.impl.UserUpdateFacadeImpl;
 import org.apache.dubbo.config.ApplicationConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.CountDownLatch;
 
 
 public class JavaCodeProviderApplication {

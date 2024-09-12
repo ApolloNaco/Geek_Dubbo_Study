@@ -1,11 +1,11 @@
-package com.hmilyylimh.cloud.consumer;
+package com.hmilyylimh.cloud.consumer.sync;
 
 import com.hmilyylimh.cloud.api.UserQueryFacade;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;
 
-public class ConsumerApplication {
+public class XmlConsumerApplication {
 
 
     public static void main(String[] args) throws IOException {

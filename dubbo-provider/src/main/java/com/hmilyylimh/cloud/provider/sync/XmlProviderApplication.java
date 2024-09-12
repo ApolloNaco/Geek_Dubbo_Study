@@ -1,8 +1,7 @@
-package com.hmilyylimh.cloud.provider;
+package com.hmilyylimh.cloud.provider.sync;
 
 
 
-import org.apache.dubbo.container.Main;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.concurrent.CountDownLatch;
