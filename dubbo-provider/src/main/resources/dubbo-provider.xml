@@ -12,7 +12,9 @@
     <dubbo:protocol name="dubbo" port="20880" />
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.hmilyylimh.cloud.api.UserQueryFacade" ref="userQueryFacade" />
-
     <bean id = "userQueryFacade" class="com.hmilyylimh.cloud.provider.impl.UserQueryFacadeImpl"/>
+
+    <dubbo:service interface="com.hmilyylimh.cloud.api.LongTimeQueryFacade" ref="longTimeQueryFacade" />
+    <bean id = "longTimeQueryFacade" class="com.hmilyylimh.cloud.provider.impl.LongTimeQueryFacadeImpl"/>
 
 </beans>
