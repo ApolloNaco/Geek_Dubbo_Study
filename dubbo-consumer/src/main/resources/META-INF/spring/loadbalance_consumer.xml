@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd        http://dubbo.apache.org/schema/dubbo        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <!-- 调方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-consumer" />
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+
+    <dubbo:reference interface="com.hmilyylimh.cloud.api.UserQueryFacade"
+                     check="false"
+                     loadbalance="roundrobin"
+                     id="userQueryFacade"
+    ></dubbo:reference>
+
+    <dubbo:reference interface="com.hmilyylimh.cloud.api.LongTimeQueryFacade"
+                     check="false"
+                     loadbalance="random"
+                     id="longTimeQueryFacade"
+    ></dubbo:reference>
+
+<!--leastActive  最少活跃调用数，相同活跃数的随机，活跃数指调用前后计数差。
+使慢的提供者收到更少请求，因为越慢的提供者的调用前后计数差会越大。
+roundrobin 循环
+random 随机
+-->
+
+
+</beans>

@@ -1,6 +1,7 @@
 package com.hmilyylimh.cloud.provider.impl;
 
 import com.hmilyylimh.cloud.api.UserQueryFacade;
+import org.apache.dubbo.rpc.RpcContext;
 
 /**
  * 用户查询实现类逻辑
@@ -8,6 +9,8 @@ import com.hmilyylimh.cloud.api.UserQueryFacade;
 public class UserQueryFacadeImpl implements UserQueryFacade {
     @Override
     public String queryUser(String name) {
-        return "hello " + name + ", my name is yuki.";
+        String s = "hello " + name + ", my name is yuki. port = " + RpcContext.getContext().getLocalPort();
+        System.out.println(s);
+        return s;
     }
 }
