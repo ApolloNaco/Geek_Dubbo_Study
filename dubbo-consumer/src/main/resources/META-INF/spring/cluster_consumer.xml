@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd        http://dubbo.apache.org/schema/dubbo        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <!-- 调方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-consumer" />
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+
+<!--    <dubbo:reference interface="com.hmilyylimh.cloud.api.UserQueryFacade"-->
+<!--                     id="userQueryFacade"-->
+<!--                     url="dubbo://10.117.225.53:20880"-->
+<!--    ></dubbo:reference>-->
+
+    <dubbo:reference interface="com.hmilyylimh.cloud.api.LongTimeQueryFacade"
+                     check="false"
+                     timeout="100"
+                     cluster="broadcast"
+                     id="longTimeQueryFacade"
+    ></dubbo:reference>
+
+<!--    failover 默认重试三次 不同的节点都调
+failfast 只调1次
+failsafe 虽然失败了，但是回返回null 而且不会抛异常
+failback 失败了 会在后台继续帮我们重试3次 主线程可以继续执行业务代码
+broadcast 发起一次调用 会找所有的consumer获取结果，如果有一次异常，调用方就异常
+broadcast2 要在dubbo的高版本才有 可以理解为broadcast+failsafe 上游都会被调到，但是如果有1个是异常，就会返回null-->
+
+
+</beans>
