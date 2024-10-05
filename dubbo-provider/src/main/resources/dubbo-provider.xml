@@ -4,7 +4,9 @@
        xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd        http://dubbo.apache.org/schema/dubbo        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="dubbo-provider" />
+    <dubbo:application name="dubbo-provider" >
+<!--        <dubbo:parameter key="dump.directory" value="/tmp"></dubbo:parameter>-->
+    </dubbo:application>
     <!--本地注册不注册到远程address填N/A,到时候采用Url调用-->
     <!--    <dubbo:registry address="N/A" />-->
     <dubbo:registry address="zookeeper://127.0.0.1:2181" />
